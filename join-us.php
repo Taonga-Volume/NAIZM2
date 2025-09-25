@@ -57,9 +57,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Join Us | NAIZM</title>
-    <link rel="stylesheet" href="CSS/join.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="icon" href="IMAGES/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="join.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
     <script src="script.js"></script>
     <style>
         .success-msg,
@@ -86,13 +86,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 
     <header>
-        <div class="logo"><a href="Home.html"><img src="IMAGES/1.png" alt="NAI-ZM Logo"></a></div>
+        <div class="logo"><a href="Home.html"><img src="1.png" alt="NAI-ZM Logo"></a></div>
         <nav id="nav-menu">
             <ul id="nav-menu" class="hamburger-menu">
                 <li><a href="Home.html" class="menu-btn">Home</a></li>
                 <li><a href="about-us.html" class="menu-btn">About</a></li>
                 <li><a href="events.html" class="menu-btn">Events</a></li>
-                <li><a href="#blogs" class="menu-btn">Blogs</a></li>
+                <li><a href="all-blogs.html" class="menu-btn">Blogs</a></li>
                 <li><a href="join-us.php" class="menu-btn">Join Us</a></li>
                 <li><a href="contact.php" class="menu-btn">Contact</a></li>
             </ul>
@@ -179,5 +179,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </footer>
 
 </body>
+
 
 </html>
