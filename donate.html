@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Donate - NAI-ZM</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="CSS/blog.css">
+  <style>
+    .donate-page {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+      background: #e9ffe5;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .donate-page h1 {
+      text-align: center;
+      color: #198a00ff;
+      margin-bottom: 30px;
+    }
+
+    .donation-methods {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 20px;
+    }
+
+    .method {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      flex: 1 1 300px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .method h2 {
+      color: #198a00ff;
+      margin-bottom: 15px;
+    }
+
+    .method ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 15px;
+    }
+
+    .method ul li {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+
+    .method button {
+      background-color: #198a00ff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+    }
+
+    .method button:hover {
+      background-color: #157700;
+    }
+
+    /* Mobile responsive */
+    @media (max-width: 768px) {
+      .donation-methods {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+  <script src="https://checkout.flutterwave.com/v3.js"></script>
+</head>
+<body>
+
+  <!-- Header / Navbar -->
+  <header>
+    <div class="logo">
+      <a href="Home.html"><img src="IMAGES/1.png" alt="NAI-ZM Logo"></a>
+    </div>
+
+    <nav id="nav-menu">
+      <ul id="nav-menu" class="hamburger-menu">
+        <li><a href="Home.html" class="menu-btn">Home</a></li>
+        <li><a href="about-us.html" class="menu-btn">About</a></li>
+        <li><a href="events.html" class="menu-btn">Events</a></li>
+        <li><a href="#blogs" class="menu-btn">Blogs</a></li>
+        <li><a href="join-us.php" class="menu-btn">Join Us</a></li>
+        <li><a href="contact.php" class="menu-btn">Contact</a></li>
+    </ul>
+    </nav>
+
+    <a href="donate.html" ><button class="donate-btn">       
+      Donate</button></a>
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+  </header>
+
+  <!-- Donate Page -->
+  <main class="donate-page">
+    <h1>Support NAI-ZM</h1>
+    <p style="text-align:center;">Your contribution helps us empower Zambia through digital advocacy and community initiatives.</p>
+
+    <div class="donation-methods">
+
+      <!-- Mobile Money -->
+      <div class="method">
+        <h2>Mobile Money</h2>
+        <p>Send your donation directly using MTN or Airtel Mobile Money:</p>
+        <ul>
+          <li>MTN: 096 XXXXXXX (NAI-ZM)</li>
+          <li>Airtel: 095 XXXXXXX (NAI-ZM)</li>
+        </ul>
+        <p>After sending, please send your name and amount to <a href="mailto:info@naizm.org">info@naizm.org</a></p>
+      </div>
+
+      <!-- Flutterwave Mobile Money Integration -->
+      <div class="method">
+        <h2>Pay via Mobile Money Online</h2>
+        <p>Use your MTN or Airtel number to donate instantly online.</p>
+        <input type="number" id="amount" placeholder="Enter Amount (ZMW)" style="margin-bottom:10px; width:100%; padding:8px; border-radius:5px; border:1px solid #ccc;">
+        <button id="mobile-money-btn">Donate Now</button>
+      </div>
+
+    </div>
+  </main>
+
+  <footer>
+      <p>&copy; 2025 NAIZM. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Flutterwave integration
+    document.getElementById("mobile-money-btn").addEventListener("click", function() {
+      const amount = document.getElementById("amount").value;
+      if (!amount || amount <= 0) {
+        alert("Please enter a valid amount.");
+        return;
+      }
+
+      FlutterwaveCheckout({
+        public_key: "YOUR_FLUTTERWAVE_PUBLIC_KEY",
+        tx_ref: "NAIZM_" + Date.now(),
+        amount: amount,
+        currency: "ZMW",
+        payment_options: "mobilemoney",
+        customer: {
+            email: "donor@example.com",
+            phone_number: "096XXXXXXX",
+            name: "John Doe"
+        },
+        customizations: {
+            title: "NAI-ZM Donation",
+            description: "Support NAI-ZM initiatives",
+            logo: "https://yourdomain.com/IMAGES/1.png"
+        },
+        callback: function (data) {
+            alert("Payment successful! Transaction ID: " + data.transaction_id);
+        },
+        onclose: function() {
+            alert("Payment cancelled.");
+        }
+      });
+    });
+  </script>
+</body>
+</html>

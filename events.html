@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NAI-ZM Events 2025</title>
+  <link rel="stylesheet" href="css/events.css">
+   <link rel="stylesheet" href="css/styles.css">
+ <script src="script.js"></script>
+  <link rel="icon" href="IMAGES/favicon.ico" type="image/x-icon">
+  <style>
+   
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <a href="Home.html"><img src="IMAGES/1.png" alt="NAI-ZM Logo"></a>
+    </div>
+
+    <nav id="nav-menu">
+      <ul id="nav-menu" class="hamburger-menu">
+        <li><a href="Home.html" class="menu-btn">Home</a></li>
+        <li><a href="about-us.html" class="menu-btn">About</a></li>
+        <li><a href="events.html" class="menu-btn">Events</a></li>
+        <li><a href="#blogs" class="menu-btn">Blogs</a></li>
+        <li><a href="join-us.php" class="menu-btn">Join Us</a></li>
+        <li><a href="contact.php" class="menu-btn">Contact</a></li>
+    </ul>
+    </nav>
+
+    <a href="donate.html" ><button class="donate-btn">       
+      Donate</button></a>
+  </header>
+
+  <main>
+    <h1>Upcoming Events</h1>
+
+    <div class="events-container">
+      <!-- Online Event 1 -->
+      <div class="event-card">
+        <h2>Tech Conference 2025</h2>
+        <p><strong>Date:</strong> 15 March 2025</p>
+        <p><strong>Location:</strong> Online (Zoom)</p>
+        <p class="event-desc">A gathering of leading innovators in AI, Cloud, and Programming. 
+          <span class="more-text" style="display:none;">Expect keynote speeches, networking opportunities, and workshops led by industry experts.</span>
+        </p>
+        <button class="see-more">See more</button>
+        <a href="https://zoom.us/example" target="_blank" class="register-btn">Register</a>
+      </div>
+
+      <!-- Online Event 2 -->
+      <div class="event-card">
+        <h2>Women in Tech Summit</h2>
+        <p><strong>Date:</strong> 10 April 2025</p>
+        <p><strong>Location:</strong> Online (Google Meet)</p>
+        <p class="event-desc">Celebrating women shaping the future of technology. 
+          <span class="more-text" style="display:none;">The summit will feature inspirational talks, mentorship opportunities, and startup showcases by women entrepreneurs.</span>
+        </p>
+        <button class="see-more">See more</button>
+        <a href="https://meet.google.com/example" target="_blank" class="register-btn">Register</a>
+      </div>
+
+      <!-- Online Event 3 -->
+      <div class="event-card">
+        <h2>Developers Bootcamp</h2>
+        <p><strong>Date:</strong> 5 May 2025</p>
+        <p><strong>Location:</strong> Online (Microsoft Teams)</p>
+        <p class="event-desc">An intensive coding bootcamp for young developers. 
+          <span class="more-text" style="display:none;">This program covers web development, mobile apps, and career-building sessions.</span>
+        </p>
+        <button class="see-more">See more</button>
+        <a href="https://teams.microsoft.com/example" target="_blank" class="register-btn">Register</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 NAI-ZM. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // See more / See less toggle
+    document.querySelectorAll('.see-more').forEach(button => {
+      button.addEventListener('click', () => {
+        const moreText = button.previousElementSibling.querySelector('.more-text');
+        if (moreText.style.display === "none") {
+          moreText.style.display = "inline";
+          button.textContent = "See less";
+        } else {
+          moreText.style.display = "none";
+          button.textContent = "See more";
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>

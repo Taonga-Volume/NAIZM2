@@ -1,0 +1,71 @@
+
+
+
+main {
+  max-width: 1000px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #198a00ff;
+  margin-bottom: 20px;
+}
+
+.events-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.event-card {
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.event-card:hover {
+  transform: translateY(-5px);
+}
+
+.event-card h2 {
+  color: #198a00ff;
+  margin-bottom: 10px;
+}
+
+.event-card p {
+  margin-bottom: 10px;
+}
+
+.see-more {
+  color: #ff9900;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  background: none;
+  margin-top: 10px;
+}
+
+.register-btn {
+  background: #198a00ff;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-top: 15px;
+  font-weight: bold;
+  align-self: flex-start;
+  text-decoration: none;
+}
+
+.register-btn:hover {
+  background: #157700;
+}
+

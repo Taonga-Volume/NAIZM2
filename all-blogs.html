@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog Title 1 - NAI-ZM</title>
+  <link rel="stylesheet" href="CSS/blog.css">
+  <link rel="stylesheet" href="css/styles.css">
+  
+</head>
+<body>
+
+  <!-- Reuse header / navbar -->
+  <header>
+    <div class="logo">
+      <a href="Home.html"><img src="IMAGES/1.png" alt="NAI-ZM Logo"></a>
+    </div>
+
+    <nav id="nav-menu">
+        <ul id="nav-menu" class="hamburger-menu">
+            <li><a href="Home.html" class="menu-btn">Home</a></li>
+            <li><a href="about-us.html" class="menu-btn">About</a></li>
+            <li><a href="events.html" class="menu-btn">Events</a></li>
+            <li><a href="#blogs" class="menu-btn">Blogs</a></li>
+            <li><a href="join-us.php" class="menu-btn">Join Us</a></li>
+            <li><a href="contact.php" class="menu-btn">Contact</a></li>
+        </ul>
+      </nav>
+
+    <a href="donate.html" ><button class="donate-btn">       
+        Donate</button></a>
+
+    <!-- Hamburger Icon -->
+    <div class="hamburger" onclick="toggleMenu()">☰</div>
+</header>
+
+
+  
+  <main class="blogs-page">
+    <h1>All Articles</h1>
+
+    <!-- Blog 1 -->
+    <div class="blog">
+        <h2 class="blog-title">Digital Skills for the Future</h2>
+        <p class="blog-summary">
+            Discover the most important digital skills for 2025 and beyond.
+            <span class="blog-more" style="display:none;">
+                With AI, blockchain, and cloud computing shaping industries, learning coding, data analytics, and digital marketing has become essential for staying competitive.
+            </span>
+        </p>
+        <button class="see-more-btn">See More</button>
+    </div>
+
+    <!-- Blog 2 -->
+    <div class="blog">
+        <h2 class="blog-title">Community Engagement in Tech</h2>
+        <p class="blog-summary">
+            How communities drive technological innovation.
+            <span class="blog-more" style="display:none;">
+                Local coding hubs, hackathons, and tech meetups allow people to share knowledge, solve problems collaboratively, and create impactful tech solutions for real-world challenges.
+            </span>
+        </p>
+        <button class="see-more-btn">See More</button>
+    </div>
+
+    <!-- Blog 3 -->
+    <div class="blog">
+        <h2 class="blog-title">Women in Technology</h2>
+        <p class="blog-summary">
+            Celebrating women leading in tech fields.
+            <span class="blog-more" style="display:none;">
+                From software engineers to tech entrepreneurs, women are breaking barriers in STEM. Initiatives like mentorship programs and scholarships are helping to close the gender gap in technology.
+            </span>
+        </p>
+        <button class="see-more-btn">See More</button>
+    </div>
+
+    <!-- Blog 4 -->
+    <div class="blog">
+        <h2 class="blog-title">Sustainable Tech Innovations</h2>
+        <p class="blog-summary">
+            Technology meeting sustainability.
+            <span class="blog-more" style="display:none;">
+                Green tech, renewable energy solutions, and eco-friendly hardware designs are transforming the tech industry while reducing environmental impact.
+            </span>
+        </p>
+        <button class="see-more-btn">See More</button>
+    </div>
+
+    <!-- Blog 5 -->
+    <div class="blog">
+        <h2 class="blog-title">AI in Everyday Life</h2>
+        <p class="blog-summary">
+            How artificial intelligence touches our daily routines.
+            <span class="blog-more" style="display:none;">
+                From smart assistants and personalized recommendations to healthcare diagnostics, AI is becoming a seamless part of daily life, making tasks easier and decisions smarter.
+            </span>
+        </p>
+        <button class="see-more-btn">See More</button>
+    </div>
+
+</main>
+
+<footer>
+    <p>&copy; 2025 NAIZM. All rights reserved.</p>
+</footer>
+
+<script >
+  // Select all "See More" buttons
+const seeMoreButtons = document.querySelectorAll(".see-more-btn");
+
+seeMoreButtons.forEach(button => {
+    button.addEventListener("click", function() {
+        // Find the corresponding hidden text in the same blog
+        const moreText = this.previousElementSibling.querySelector(".blog-more");
+
+        if (moreText.style.display === "none" || moreText.style.display === "") {
+            moreText.style.display = "inline"; // show the extra text
+            this.textContent = "See Less";      // change button text
+        } else {
+            moreText.style.display = "none";    // hide the extra text
+            this.textContent = "See More";      // reset button text
+        }
+    });
+});
+
+</script>
+  
+</body>
+</html>
